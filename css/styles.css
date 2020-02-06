@@ -16,7 +16,8 @@ label {
 
 .login-container {
   margin-top: 20px;
-  width: 300px;
+  width: 40%;
+  min-width: 300px;
 }
 
 .login-logo {
