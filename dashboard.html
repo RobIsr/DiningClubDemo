@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!--Font Awsome-->
+  <script src="https://kit.fontawesome.com/4b0b858a14.js" crossorigin="anonymous"></script>
+
+  <!--Chart.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+  <title>Kontrollpanel</title>
+</head>
+
+<body>
+  <div class="container-fluid mt-5">
+    <div class="text-center">
+      <h1>Kontrollpanel</h1>
+    </div>
+  <div class="row">
+    <!--Login Background-->
+    <div class="col-md-6">
+      <div class="card mt-5" style="min-height: 500px;">
+        <div class="card-header">
+          <h3 class="d-inline">Ändra bakgrund för login</h3>
+          <button type="button" id="bg-info-button" class="btn btn-default btn-sm float-right">
+            <i class="far fa-question-circle d-inline float-right"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <form class="mx-auto d-block">
+            <div class="form-group pb-3 pt-3">
+              <label for="background-video-file">Bakgrundsvideo</label>
+              <input type="file" class="form-control-file" id="background-video-file">
+            </div>
+            <div class="progress mb-5">
+              <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Ladda upp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End of Login Background-->
+
+    <!--Push Notification-->
+    <div class="col-md-6">
+      <div class="card mt-5" style="min-height: 500px;"">
+        <div class="card-header">
+          <h3 class="d-inline">Skicka pushnotis</h3>
+          <button type="button" id="push-info-button" class="btn btn-default btn-sm float-right">
+            <i class="far fa-question-circle d-inline float-right"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <form class="d-block">
+            <div class="form-group">
+              <label for=push-title-text"">Titel</label>
+              <input class="d-block" type="text" id="push-title-text" name="push-title" value="">
+            </div>
+            <div class="form-group">
+              <label for="push-text-area">Meddelande</label>
+              <textarea class="form-control" id="push-text-area" rows="3"></textarea>
+            </div>
+            <div class="form-group pb-3 pt-3">
+              <label for="push-img-file">Välj bild</label>
+              <input type="file" class="form-control-file" id="push-img-file">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Skicka</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End of Push Notification-->
+
+    <!--Event-->
+    <div class="col-sm-12">
+      <div class="card mt-5 mb-5">
+        <div class="card-header">
+          <h3 class="d-inline">Lägg till event</h3>
+          <button type="button" id="event-info-button" class="btn btn-default btn-sm float-right">
+            <i class="far fa-question-circle d-inline float-right"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <form class="d-block">
+                <div class="form-group">
+                  <label for=push-title-text"">Titel</label>
+                  <input class="d-block" type="text" id="event-title" name="event-title" value="">
+                </div>
+                <div class="form-group">
+                  <label for="push-text-area">Beskrivning</label>
+                  <textarea class="form-control" id="event-description" rows="3" name="event-description"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="push-text-area">Pris</label>
+                  <input class="d-block" type="number" id="event-price" name="event-price">
+                </div>
+                <div class="form-group pb-3 pt-3">
+                  <label for="push-img-file">Välj bakgrunds bild</label>
+                  <input type="file" class="form-control-file" id="event-img-file">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Lägg till</button>
+              </form>
+            </div>
+            <div class="col-md-6 text-center">
+              <label for="your-events">Dina event</label>
+              <ul class="list-group w-50 ml-auto mr-auto text-left">
+                <li class="list-group-item">Event 1
+                  <div class="event-list-button-group float-right">
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-pen float-right"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="list-group-item">Event 2
+                  <div class="event-list-button-group float-right">
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-pen float-right"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="list-group-item">Event 3
+                  <div class="event-list-button-group float-right">
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-pen float-right"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="list-group-item">Event 4
+                  <div class="event-list-button-group float-right">
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                    <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
+                      <i class="fas fa-pen float-right"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of Event-->
+
+    <!--Statistics-->
+    <div class="col-sm-12">
+      <div class="card mb-5">
+        <div class="card-header">
+          <h3 class="d-inline">Statistik</h3>
+          <button type="button" id="event-info-button" class="btn btn-default btn-sm float-right">
+            <i class="far fa-question-circle d-inline float-right"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-5">
+              <div class="chart-container">
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+            <div class="col-md-4 mb-5">
+              <div class="chart-container">
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+            <div class="col-md-4 mb-5">
+              <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of Statistics-->
+  </div>
+    </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+    jQuery(document).ready(function() {
+      var pieChartDiv = $("#pieChart");
+      var myChart = new Chart(pieChartDiv, {
+        type: 'pie',
+        data: {
+          labels: ["Män", "Kvinnor"],
+          datasets: [{
+            data: [60, 40],
+            backgroundColor: [
+              "#FF6384",
+              "#4BC0C0",
+            ]
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Män/Kvinnor'
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      });
+    });
+
+    jQuery(document).ready(function() {
+      var barChartDiv = $("#barChart");
+      var myChart = new Chart(barChartDiv, {
+        type: 'bar',
+        data: {
+          labels: ["18-24", "25-29", "30-34", "35-40", "40-50"],
+          datasets: [{
+            data: [300, 130, 50, 20, 5],
+            backgroundColor: [
+              "#FF6384",
+              "#4BC0C0",
+              "#21bf73",
+              "#fdd365",
+              "#434e52"
+            ]
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Åldersfördelning'
+          },
+          legend: {
+            display: false
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      });
+    });
+
+    jQuery(document).ready(function() {
+          var chartData = {
+            labels: ["M", "T", "O", "T", "F", "L", "S"],
+            datasets: [{
+                data: [50, 75, 320, 200, 480, 432, 63],
+                backgroundColor: [
+                  "#4BC0C0",
+                ]
+              },
+            ]
+          };
+
+          var chLine = document.getElementById("lineChart");
+          if (chLine) {
+            new Chart(chLine, {
+              type: 'line',
+              data: chartData,
+              options: {
+                title: {
+                  display: true,
+                  text: 'Inloggningar över tid'
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: false
+                    }
+                  }]
+                },
+                legend: {
+                  display: false
+                }
+              }
+            });
+          }
+        });
+  </script>
+</body>
+
+</html>
