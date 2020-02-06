@@ -25,14 +25,36 @@
 </head>
 
 <body>
-  <div class="container-fluid mt-3">
-    <div class="text-center">
-      <h1>Kontrollpanel</h1>
-    </div>
+  <div class="container-fluid">
+
+    <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">Kontrollpanel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#login-background">Login Bakgrund</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#push-notification">Skicka Pushnotis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#events">Lägg till Eevent</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#statistics">Statistik</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
   <div class="row">
     <!--Login Background-->
     <div class="col-md-6">
-      <div class="card mt-5" style="min-height: 500px;">
+      <div id="login-background" class="card mt-5">
         <div class="card-header">
           <h3 class="d-inline">Ändra bakgrund för login</h3>
           <button type="button" id="bg-info-button" class="btn btn-default btn-sm float-right">
@@ -45,10 +67,14 @@
               <label for="background-video-file">Bakgrundsvideo</label>
               <input type="file" class="form-control-file" id="background-video-file">
             </div>
-            <div class="progress mb-5">
-              <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="form-group pb-3 pt-3">
+              <div class="progress pb-auto">
+                <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Ladda upp</button>
+            <div class="form-group pb-3 pt-4">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Ladda upp</button>
+            </div>
           </form>
         </div>
       </div>
@@ -57,7 +83,7 @@
 
     <!--Push Notification-->
     <div class="col-md-6">
-      <div class="card mt-5" style="min-height: 500px;"">
+      <div id="push-notification" class="card mt-5">
         <div class="card-header">
           <h3 class="d-inline">Skicka pushnotis</h3>
           <button type="button" id="push-info-button" class="btn btn-default btn-sm float-right">
@@ -74,10 +100,6 @@
               <label for="push-text-area">Meddelande</label>
               <textarea class="form-control" id="push-text-area" rows="3"></textarea>
             </div>
-            <div class="form-group pb-3 pt-3">
-              <label for="push-img-file">Välj bild</label>
-              <input type="file" class="form-control-file" id="push-img-file">
-            </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Skicka</button>
           </form>
         </div>
@@ -87,7 +109,7 @@
 
     <!--Event-->
     <div class="col-sm-12">
-      <div class="card mt-5 mb-5">
+      <div id="events" class="card mt-5 mb-5">
         <div class="card-header">
           <h3 class="d-inline">Lägg till event</h3>
           <button type="button" id="event-info-button" class="btn btn-default btn-sm float-right">
@@ -112,14 +134,14 @@
                 </div>
                 <div class="form-group pb-3 pt-3">
                   <label for="push-img-file">Välj bakgrunds bild</label>
-                  <input type="file" class="form-control-file mt-1" id="event-img-file">
+                  <input type="file" class="form-control-file" id="event-img-file">
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Lägg till</button>
               </form>
             </div>
-            <div class="col-md-6 text-center mt-5">
+            <div class="col-md-6 text-center">
               <label for="your-events">Dina event</label>
-              <ul class="list-group w-80 ml-auto mr-auto text-left">
+              <ul class="list-group w-50 ml-auto mr-auto text-left">
                 <li class="list-group-item">Event 1
                   <div class="event-list-button-group float-right">
                     <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
@@ -170,7 +192,7 @@
 
     <!--Statistics-->
     <div class="col-sm-12">
-      <div class="card mb-5">
+      <div id="statistics" class="card mb-5">
         <div class="card-header">
           <h3 class="d-inline">Statistik</h3>
           <button type="button" id="event-info-button" class="btn btn-default btn-sm float-right">
