@@ -26,32 +26,35 @@
 
 <body>
   <div class="container-fluid">
-
-    <!-- Nav Bar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="">Kontrollpanel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#login-background">Login Bakgrund</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#push-notification">Skicka Pushnotis</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#events">Lägg till Eevent</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#statistics">Statistik</a>
-            </li>
-          </ul>
+      <div class="row">
+        <div class="col-12">
+          <!-- Nav Bar -->
+            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+              <a class="navbar-brand" href="#" style="color: primary;">Kontrollpanel</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#login-background">Login Bakgrund</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#push-notification">Skicka Pushnotis</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#events">Lägg till Eevent</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#statistics">Statistik</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
         </div>
-      </nav>
+      </div>
 
-  <div class="row">
+  <div class="row mt-4">
     <!--Login Background-->
     <div class="col-md-6">
       <div id="login-background" class="card mt-5">
@@ -136,12 +139,12 @@
                   <label for="push-img-file">Välj bakgrunds bild</label>
                   <input type="file" class="form-control-file" id="event-img-file">
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Lägg till</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" >Lägg till</button>
               </form>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 text-center mt-4">
               <label for="your-events">Dina event</label>
-              <ul class="list-group w-50 ml-auto mr-auto text-left">
+              <ul class="list-group w-70 ml-auto mr-auto text-left">
                 <li class="list-group-item">Event 1
                   <div class="event-list-button-group float-right">
                     <button type="button" id="event-delete-button" class="btn btn-default btn-sm pl-0 pr-0">
