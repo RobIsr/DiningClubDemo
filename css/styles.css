@@ -1,5 +1,11 @@
 body {
   font-family: 'Montserrat', sans-serif;
+  padding-top: 60px;
+  @media (max-width: 979px) {
+    body {
+      padding-top: 0px;
+    }
+  }
 }
 
 h1 {
@@ -31,9 +37,6 @@ label {
   padding-bottom: 1rem;
 }
 
-.navbar {
-  margin-top: 1rem;
-}
 
 .navbar-brand {
   font-size: 1.5rem;
